@@ -68,17 +68,17 @@ setMoves(pokemon.moves);
 
 function setId(id){
     const element = document.getElementById("pokemonId");
-    element.innerHTML = "Dex Number: " + id;
+    element.innerHTML = "<strong>Dex Number: </strong>" + id;
 }
 
 function setName(name){
     const element = document.getElementById("pokemonName");
-    element.innerHTML = "Name: " + name.charAt(0).toUpperCase() + name.slice(1);
+    element.innerHTML = "<strong>Name: </strong>" + name.charAt(0).toUpperCase() + name.slice(1);
 }
 
 function setType(types){
     const element = document.getElementById("pokemonType");
-    element.innerHTML = "Type: " + types.map(type =>{ 
+    element.innerHTML = "<strong>Type: </strong>" + types.map(type =>{ 
         let name =type.type.name;
         return name.charAt(0).toUpperCase() + name.slice(1);
     }).join(',');
@@ -86,12 +86,12 @@ function setType(types){
 
 function setHeight(height){
     const element = document.getElementById("pokemonHeight");
-    element.innerHTML = "Height: " + (height/3.048).toFixed(2) +"ft";
+    element.innerHTML = "<strong>Height: </strong>" + (height/3.048).toFixed(2) +"ft";
 }
 
 function setWeight(weight){
     const element = document.getElementById("pokemonWeight");
-    element.innerHTML = "Weight: " + (weight/4.536).toFixed(2) +"lbs";
+    element.innerHTML = "<strong>Weight: </strong>" + (weight/4.536).toFixed(2) +"lbs";
 }
 
 function setImage(sprites){
@@ -102,8 +102,8 @@ function setImage(sprites){
 function setMoves(moves){
     const element = document.getElementById("pokemonMoves");
     element.innerHTML = `
-    <span id="moveListTitle"><i class="fas fa-caret-down"></i>Moves List</span>
-    <ul id="moveList" hidden>
+    <span id="moveListTitle"><i class="fas fa-caret-down"></i><strong>Moves List</strong></span>
+    <ul  class = "moveList" id="moveList" hidden>
     ${moves.map(move => {
         return`
         <li class='moveName' id='${move.move.name}'>
